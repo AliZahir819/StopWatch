@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch - JS Project</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>VANILLA JAVASCRIPT STOPWATCH</h1>
+
+    <p>
+        <span id="mins">00</span> <span id="colon">:</span> <span id="seconds">00</span>
+    </p>
+
+    <div id="btn">
+        <button onclick="Start()">Start</button>
+        <button onclick="Stop()">Stop</button>
+        <button onclick="Reset()">Reset</button>
+    </div>
+
+
+    <script>
+
+        var minutes = 00;
+        var second = 00;
+
+        var getSec;
+        var getMint
+
+        var interval;
+
+        function Start() {
+
+            getMint = document.getElementById("mins");
+            getSec = document.getElementById("seconds");
+
+            interval = setInterval(startTimer, 100);
+
+        }
+
+        function startTimer() {
+            second++;
+            if (second < 9) {
+
+                getSec.innerHTML = "0" + second;
+            } else if (second > 9) {
+
+                getSec.innerHTML = second;
+            }
+            
+            if (second == 60) {
+                minutes++;
+                second = 0;
+
+                if (minutes < 9) {
+                    getMint.innerHTML = "0" + minutes;
+                    getSec.innerHTML = second;
+                } else if (minutes > 9)
+                    getMint.innerHTML = minutes;
+                getSec.innerHTML = second;
+
+            }
+        }
+
+        function Stop() {
+            clearInterval(interval);
+        }
+
+        function Reset() {
+            minutes = 00;
+            second = 00;
+
+            clearInterval(interval);               // it stop the interval
+
+            getMint.innerHTML = minutes;
+            getSec.innerHTML = second;
+        }
+
+    </script>
+
+</body>
+
+</html>

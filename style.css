@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+}
+
+h1{
+    color: #fff;
+    margin: 50px 0 20px 0;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+#mins, #seconds, #colon{
+
+    color: #fff;
+    font-size: 230%;
+}
+
+#btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    margin-left: 10px;
+}
